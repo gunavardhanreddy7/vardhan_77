@@ -11,9 +11,10 @@ import java.util.Date;
  * DO NOT PUT any classes into packages
  *
  */
-public class StudentGroup implements StudentArrayOperation {
-
-	private Student[] students;
+ class StudentGroup implements StudentArrayOperation 
+ {
+	 Student[] students;
+ 
 	
 	/**
 	 * DO NOT remove or change this constructor, it will be used during task check
@@ -150,12 +151,23 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void bubbleSort() {
 		// Add your implementation here
+		int n=this.students.length;
+		for(int i=0;i<n-1;i++)
+			for(int j=0;j<n-i-1;j++)
+				if((this.students[j]).isGreaterThan(this.students[j+1]))
+				{
+                                   Student student= new Student();
+				    student=this.students[i];
+				    this.students[i]=this.students[j];
+		    		    this.students[j]=student;	
+                                 
 	}
 
 	@Override
 	public Student[] getByBirthDate(Date date) {
 		// Add your implementation here
-		return null;
+		
+		
 	}
 
 	@Override
@@ -179,12 +191,26 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getStudentsByAge(int age) {
 		// Add your implementation here
-		return null;
+	
 	}
 
 	@Override
 	public Student[] getStudentsWithMaxAvgMark() {
 		// Add your implementation here
+		int l=this.students.length;
+		int max=this.students[0].avgMark;
+		for(int i=0;i<l;i++)
+		 if(this.students[i].avgMark > max)
+			max=this.students[i].avgMark;
+ 
+			Student students1[]= new Student();
+			int k=0;
+			for(int j=0;j<n;j++)
+			{
+                           if(this.students[i].avgMark == max)
+				students1[k++]=this.students[i];
+                         }
+			return students1;
 		
 	}
 
