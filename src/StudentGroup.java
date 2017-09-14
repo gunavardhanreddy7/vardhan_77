@@ -15,54 +15,128 @@ public class StudentGroup implements StudentArrayOperation {
 
 	private Student[] students;
 	
-	/**
+	int length;/**
 	 * DO NOT remove or change this constructor, it will be used during task check
 	 * @param length
 	 */
 	public StudentGroup(int length) {
-		this.students = new Student[length];
+	this.students = new Student[length];
+	this.length=length;
 	}
+	ArrayList<student> s=new ArrayList<student>();
 
 	@Override
 	public Student[] getStudents() {
-		// Add your implementation here
-		return null;
+		if(students==NULL)
+		{
+			try{
+				throws IllegalArgumentException;
+			}
+		catch(IllegalArgumentException e)
+		{
+			System.out.println(e);
+		}}
+		 else // Add your implementation here
+		return s.get();;
 	}
 
 	@Override
 	public void setStudents(Student[] students) {
-		// Add your implementation here
+		
+		s.add(students);// Add your implementation here
 	}
 
 	@Override
 	public Student getStudent(int index) {
+		if(index==0 || index>=length)
+		{
+			try{
+				throws IllegalArgumentException;
+			}
+		catch(IllegalArgumentException e)
+		{
+			System.out.println(e);
+		}}
 		// Add your implementation here
-		return null;
+		else
+			return s.get(index);
 	}
 
 	@Override
 	public void setStudent(Student student, int index) {
-		// Add your implementation here
+		if(index==0 || index>=length || student==NULL)
+		{
+			try{
+				throws IllegalArgumentException;
+		}
+		catch(IllegalArgumentException e)
+		{
+			System.out.println(e);
+		}
+		s.add(index,student);// Add your implementation here
 	}
 
 	@Override
 	public void addFirst(Student student) {
-		// Add your implementation here
+		if(students==NULL)
+		{
+			try{
+				throws IllegalArgumentException;
+			}
+		catch(IllegalArgumentException e)
+		{
+			System.out.println(e);
+		}}
+		else
+		s.addFirst(student);// Add your implementation here
 	}
 
 	@Override
 	public void addLast(Student student) {
-		// Add your implementation here
+		if(students==NULL)
+		{
+			try{
+				throws IllegalArgumentException;
+			}
+		catch(IllegalArgumentException e)
+		{
+			System.out.println(e);
+		}}
+		else
+		s.addLast(student);// Add your implementation here
 	}
 
 	@Override
 	public void add(Student student, int index) {
-		// Add your implementation here
+		if(students==NULL)
+		{
+			try{
+				s.addFirst(student);
+				throws IllegalArgumentException;
+			}
+		catch(IllegalArgumentException e)
+		{
+			System.out.println(e);
+		}}
+		else
+		s.add(index,student);// Add your implementation here
 	}
 
 	@Override
 	public void remove(int index) {
-		// Add your implementation here
+		if(students==NULL)
+		{
+			try{
+				
+				throws IllegalArgumentException;
+			}
+		catch(IllegalArgumentException e)
+		{
+			System.out.println(e);
+		}}
+		else{
+			s.remove(index);
+		}// Add your implementation here
 	}
 
 	@Override
